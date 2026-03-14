@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/web/seuncaleb_1.jpg">
+    <title>Seun Caleb — Writer, Poet</title>
+
+    <meta name="description" content="Portfolio of Seun Caleb - Writer, Poet, and Host of Hearts & Ink.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brand: '#C2410C',
+                        paper: '#FDFBF7',
+                        ink: '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-white text-ink">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-5 flex justify-between items-center relative z-20">
+            <a href="#" class="logo font-display font-bold text-sm tracking-wide uppercase">Seun Caleb</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#writings" class="nav-link">Writings</a>
+                <a href="#books" class="nav-link">Books</a>
+                <a href="#hearts-and-ink" class="nav-link">Hearts &amp; Ink</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="hamburger-btn md:hidden p-2 focus:outline-none" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+
+    </nav>
+
+    <!-- Mobile Menu Overlay (Outside nav to fix backdrop stacking) -->
+    <div class="mobile-menu fixed inset-0 bg-white z-40 flex flex-col items-center justify-center pt-20">
+        <div class="flex flex-col items-center gap-8 text-2xl font-display text-ink">
+            <a href="#about" class="mobile-nav-link hover:text-violet transition-colors">About</a>
+            <a href="#writings" class="mobile-nav-link hover:text-violet transition-colors">Writings</a>
+            <a href="#books" class="mobile-nav-link hover:text-violet transition-colors">Books</a>
+            <a href="#hearts-and-ink" class="mobile-nav-link hover:text-violet transition-colors">Hearts &amp; Ink</a>
+            <a href="#contact" class="mobile-nav-link hover:text-violet transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- HERO -->
+    <!-- ============================================ -->
+    <section class="relative grain overflow-visible"
+        style="background: linear-gradient(135deg, #9A3412 0%, #C2410C 40%, #EA580C 100%); min-height: 100vh; padding-bottom: 340px;">
+
+        <!-- Warm gold circle accent -->
+        <div class="absolute bottom-[20%] right-[6%] w-[160px] h-[160px] md:w-[220px] md:h-[220px] rounded-full z-10 float-slow opacity-50"
+            style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);"></div>
+
+        <!-- Soft rose accent -->
+        <div class="absolute top-[35%] left-[5%] w-12 h-12 rounded-full bg-rose-300/60 z-10 float-slow hidden md:block">
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12 pt-32 md:pt-40 relative z-20">
+
+            <!-- Giant centered name -->
+            <h1 class="hero-name text-white text-center" style="font-size: clamp(5rem, 15vw, 14rem);">
+                <span class="line"><span class="reveal">SEUN</span></span>
+                <span class="line"><span class="reveal">CALEB</span></span>
+            </h1>
+
+            <!-- Subtitle / Tagline -->
+            <p class="hero-sub text-white/70 text-lg md:text-xl text-center mt-8 font-serif italic">
+                these words are meant to be felt
+            </p>
+            <p class="hero-sub text-white/35 text-xs text-center mt-3 tracking-[0.25em] uppercase font-medium"
+                style="animation-delay: 0.8s;">
+                Writer — Poet — Host of Hearts &amp; Ink
+            </p>
+        </div>
+
+        <!-- Overlapping landscape image that bridges hero and about -->
+        <div class="hero-overlap-image w-[85vw] max-w-[900px] h-[280px] md:h-[380px]">
+            <div id="heroCarousel"
+                class="relative w-full h-full rounded-md overflow-hidden shadow-2xl shadow-black/40 border-4 border-white/10">
+                <!-- Images will be layered here by JS -->
+                <img src="images/web/seuncaleb_1.jpg" alt="Seun Caleb"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" data-active="true"
+                    style="opacity: 0;">
+                <img src="images/web/seuncaleb_2.jpg" alt="Seun Caleb"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/glasgow_IMG_3113.jpg" alt="Hearts &amp; Ink"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/seuncaleb_3.jpg" alt="Seun Caleb"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/lagos_IMG_5691.jpg" alt="Hearts &amp; Ink Lagos"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/seuncaleb_5.jpg" alt="Seun Caleb"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/glasgow_IMG_3142.jpg" alt="Hearts &amp; Ink Glasgow"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 1;">
+                <img src="images/web/seuncaleb_7.jpg" alt="Seun Caleb"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/lagos_session2_IMG_9649.jpg" alt="Hearts &amp; Ink Lagos"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+                <img src="images/web/seuncaleb_4.jpg" alt="Seun Caleb"
+                    class="absolute inset-0 w-full h-full object-cover" data-carousel-img="" style="opacity: 0;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ABOUT -->
+    <!-- ============================================ -->
+    <section id="about" class="bg-white pt-[200px] md:pt-[240px] pb-28 md:pb-40 relative z-10">
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12">
+            <div class="max-w-[640px] ml-auto">
+                <p class="text-xl md:text-2xl leading-relaxed text-ink/90 font-serif italic fade-in"
+                    style="animation-play-state: running;">
+                    Hi there! I'm Seun Caleb,
+                    Omo ìfẹ́ a writer, poet, and creative based between Lagos, Nigeria and Glasgow, Scotland.
+                </p>
+                <p class="text-base md:text-lg leading-relaxed text-ink/60 mt-8 fade-in fd1"
+                    style="animation-play-state: running;">
+                    My work explores identity, memory, migration, and the tender corners of human experience. I write
+                    essays,
+                    poetry, and long-form pieces that live on Medium and Substack.
+                </p>
+                <p class="text-base md:text-lg leading-relaxed text-ink/60 mt-6 fade-in fd2"
+                    style="animation-play-state: running;">
+                    I also host <strong class="text-ink font-bold">Hearts &amp; Ink</strong> — an intimate poetry
+                    reading session that
+                    brings together writers, listeners, and lovers of the spoken word in both Glasgow and Lagos. It's a
+                    space for
+                    vulnerability, beauty, and connection through language.
+                </p>
+                <p class="text-base md:text-lg leading-relaxed text-ink/60 mt-6 fade-in fd3"
+                    style="animation-play-state: running;">
+                    If you'd like to read my work, visit me on <a href="https://medium.com/@seuncaleb" target="_blank"
+                        class="underline text-violet hover:text-vivid transition-colors">Medium</a> or <a
+                        href="https://seuncaleb.substack.com/?utm_campaign=profile_chips" target="_blank"
+                        class="underline text-violet hover:text-vivid transition-colors">Substack</a>.
+                </p>
+                <p class="text-sm text-ink/40 mt-6 fade-in fd4" style="animation-play-state: running;">
+                    You can also find me on <a href="https://x.com/seuncaleb" target="_blank"
+                        class="underline hover:text-ink transition-colors">X (Twitter)</a> or <a
+                        href="https://instagram.com/seuncaleb" target="_blank"
+                        class="underline hover:text-ink transition-colors">Instagram</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- WRITINGS — Substack & Medium stories -->
+    <!-- ============================================ -->
+    <section id="writings" class="bg-parchment py-28 md:py-40 relative grain">
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12 relative z-10">
+
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20">
+                <h2 class="font-display font-black text-ink leading-[0.88] tracking-[-0.03em] fade-in"
+                    style="font-size: clamp(4rem, 11vw, 9rem); animation-play-state: running;">Writings</h2>
+                <p class="max-w-[360px] text-ink/50 text-sm mt-8 md:mt-0 leading-relaxed fade-in fd1"
+                    style="animation-play-state: running;">
+                    <em class="font-serif text-ink/70 text-base">these words are meant to be felt</em><br>
+                    Essays, poetry, and intimate prose from Substack and Medium.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+
+                <!-- Story 1 -->
+                <a href="https://seuncaleb.substack.com/p/my-body-is-my-fathers-remembrance" target="_blank"
+                    class="writing-card block fade-in fd1 group" style="animation-play-state: running;">
+                    <div class="aspect-[4/3] rounded-md overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1644941002474-6ee8ab0ee8cb?w=600&amp;q=80"
+                            alt="My body is my father's remembrance"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Substack</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            My body
+                            is my father's remembrance</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">"There is a mirror in my bathroom that I only
+                            look at when
+                            I have my clothes on."</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Feb 2026</p>
+                    </div>
+                </a>
+
+                <!-- Story 2 -->
+                <a href="https://seuncaleb.substack.com/p/conversations-feel-like-vanilla-ice" target="_blank"
+                    class="writing-card block fade-in fd2 group" style="animation-play-state: running;">
+                    <div class="aspect-[4/3] rounded-md overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1525598912003-663126343e1f?w=600&amp;q=80"
+                            alt="Conversations Feel Like Vanilla Ice-cream"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Substack</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            Conversations Feel Like Vanilla Ice-cream and Fox's Cookies</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">It's old but sometimes old is gold.</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Feb 2026</p>
+                    </div>
+                </a>
+
+                <!-- Story 3 -->
+                <a href="https://seuncaleb.substack.com/p/i-let-you-go-but-my-heart-says-no" target="_blank"
+                    class="writing-card block fade-in fd1 group" style="animation-play-state: running;">
+                    <div class="aspect-[4/3] rounded-md overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1626971991953-6322a7dbbc2b?w=600&amp;q=80"
+                            alt="I let you go but my heart says no"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Substack</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            I let you
+                            go, but my heart says no</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">Is this the anatomy of a broken heart?</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Jan 2026</p>
+                    </div>
+                </a>
+
+                <!-- Story 4 -->
+                <a href="https://seuncaleb.substack.com/p/im-sorry-there-is-no-way-to-make" target="_blank"
+                    class="writing-card block fade-in fd2 group" style="animation-play-state: running;">
+                    <div class="aspect-[4/3] rounded-md overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1529001304376-eb970a4229d5?w=600&amp;q=80"
+                            alt="I'm sorry, there is no way to make it stop"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Substack</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            I'm
+                            sorry, there is no way to make it stop</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">Heartbreaks, healing and everything in-between.
+                        </p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Jan 2026</p>
+                    </div>
+                </a>
+
+                <!-- Story 5 -->
+                <a href="https://seuncaleb.substack.com/p/an-orchestra-of-gratitude" target="_blank"
+                    class="writing-card block fade-in fd1 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-rose-700 to-red-900">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/80 italic text-center leading-tight">An
+                                Orchestra
+                                of Gratitude</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Substack</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            An
+                            Orchestra of Gratitude</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">I'm thinking about you again.</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Nov 2025</p>
+                    </div>
+                </a>
+
+                <!-- Story 6 -->
+                <a href="https://seuncaleb.substack.com/p/you-might-hate-me" target="_blank"
+                    class="writing-card block fade-in fd2 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-stone-800 to-neutral-950">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/80 italic text-center leading-tight">You
+                                might
+                                hate me</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Substack</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            You might
+                            hate me</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">"As a writer one of the greatest questions
+                            you'll ever have
+                            to answer is, 'Who are you writing about?'"</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Mar 2025</p>
+                    </div>
+                </a>
+
+                <!-- Medium Story 1 -->
+                <a href="https://seuncaleb.medium.com/ill-immortalize-you-with-words-6d276e0f47af" target="_blank"
+                    class="writing-card block fade-in fd1 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-violet/80 to-fuchsia-900">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/85 italic text-center leading-tight">I'll
+                                immortalize you with words</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Medium</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            I'll
+                            immortalize you with words</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">Cause you're my baby.</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Medium</p>
+                    </div>
+                </a>
+
+                <!-- Medium Story 2 -->
+                <a href="https://seuncaleb.medium.com/sincerely-yours-d9c7db74076c" target="_blank"
+                    class="writing-card block fade-in fd2 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-pink-700 to-rose-950">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/85 italic text-center leading-tight">Sincerely
+                                Yours</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Medium</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            Sincerely
+                            Yours</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">Dear Uju.</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Medium</p>
+                    </div>
+                </a>
+
+                <!-- Medium Story 3 -->
+                <a href="https://seuncaleb.medium.com/i-left-you-a-note-in-aberdeen-438509066323" target="_blank"
+                    class="writing-card block fade-in fd1 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-sky-700 to-blue-950">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/85 italic text-center leading-tight">I
+                                left you a
+                                note in Aberdeen</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Medium</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            I left
+                            you a note in Aberdeen</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">Words left behind in Aberdeen's grey, cold
+                            walls.</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Medium</p>
+                    </div>
+                </a>
+
+                <!-- Medium Story 4 -->
+                <a href="https://seuncaleb.medium.com/before-i-go-fbbfa565d96f" target="_blank"
+                    class="writing-card block fade-in fd2 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-amber-800 to-orange-950">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/85 italic text-center leading-tight">Before
+                                I
+                                Go</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Medium</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            Before I
+                            Go</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">And, thinking it is because I have big breasts.
+                        </p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Medium</p>
+                    </div>
+                </a>
+
+                <!-- Medium Story 5 -->
+                <a href="https://seuncaleb.medium.com/we-should-all-be-a-little-more-accommodating-acc006608faa"
+                    target="_blank" class="writing-card block fade-in fd1 group" style="animation-play-state: running;">
+                    <div
+                        class="aspect-[4/3] rounded-md overflow-hidden relative bg-gradient-to-br from-teal-700 to-emerald-950">
+                        <div class="absolute inset-0 flex items-center justify-center px-8">
+                            <span
+                                class="font-display text-2xl font-black text-white/85 italic text-center leading-tight">We
+                                should
+                                all be a little more accommodating</span>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold bg-black/30 backdrop-blur-sm px-2.5 py-1 rounded-full">Medium</span>
+                    </div>
+                    <div class="mt-4">
+                        <h3
+                            class="font-display text-lg font-bold leading-tight group-hover:text-violet transition-colors">
+                            We should
+                            all be a little more accommodating</h3>
+                        <p class="text-ink/50 text-sm mt-2 line-clamp-2">A reflection on kindness and making space for
+                            others.</p>
+                        <p class="text-[11px] text-ink/30 mt-2 font-medium">Medium</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Read more links -->
+            <div class="flex flex-wrap gap-4 mt-16 fade-in fd2" style="animation-play-state: running;">
+                <a href="https://seuncaleb.substack.com" target="_blank"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-ink/60 hover:text-violet transition-colors border border-ink/15 rounded-full px-5 py-2.5 hover:border-violet/40">
+                    <span>Read more on Substack</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a href="https://medium.com/@seuncaleb" target="_blank"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-ink/60 hover:text-violet transition-colors border border-ink/15 rounded-full px-5 py-2.5 hover:border-violet/40">
+                    <span>Read more on Medium</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BOOKS — Separate section -->
+    <!-- ============================================ -->
+    <section id="books" class="bg-ink text-white py-28 md:py-40 relative grain overflow-hidden">
+        <!-- Ambient glow -->
+        <div
+            class="absolute w-[500px] h-[500px] rounded-full bg-violet/10 blur-[150px] bottom-[-150px] left-[-100px] pointer-events-none">
+        </div>
+        <div
+            class="absolute w-[400px] h-[400px] rounded-full bg-amber-500/8 blur-[120px] top-[-100px] right-[-80px] pointer-events-none">
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-20">
+                <h2 class="font-display font-black text-white leading-[0.88] tracking-[-0.03em] fade-in"
+                    style="font-size: clamp(4rem, 11vw, 9rem); animation-play-state: running;">Books</h2>
+                <p class="max-w-[360px] text-white/40 text-sm mt-8 md:mt-0 leading-relaxed fade-in fd1"
+                    style="animation-play-state: running;">
+                    Published works available on Selar. Poetry, prose, and stories bound between pages.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <!-- Book 1: Diary of a Lagos Intern -->
+                <a href="https://selar.com/43v7017l27" target="_blank" class="group fade-in fd1"
+                    style="animation-play-state: running;">
+                    <div
+                        class="relative aspect-[2/3] rounded-lg overflow-hidden shadow-2xl shadow-violet/20 group-hover:shadow-violet/40 transition-shadow duration-500">
+                        <!-- Book cover design -->
+                        <div class="absolute inset-0 bg-gradient-to-b from-violet via-violet/90 to-fuchsia-900"></div>
+                        <div class="absolute inset-0"
+                            style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;); opacity: 0.08;">
+                        </div>
+                        <!-- Decorative elements -->
+                        <div class="absolute top-0 left-0 w-full h-1 bg-white/20"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-black/20"></div>
+                        <div class="absolute left-4 top-0 bottom-0 w-[1px] bg-white/10"></div>
+                        <!-- Spine shadow -->
+                        <div class="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/30 to-transparent">
+                        </div>
+                        <!-- Content -->
+                        <div class="absolute inset-0 flex flex-col justify-between p-8">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold">Seun Caleb</p>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-display text-3xl md:text-4xl font-black text-white italic leading-[1.1]">
+                                    Diary of a
+                                    Lagos Intern</h3>
+                                <div class="w-12 h-[2px] bg-white/30 mt-4"></div>
+                            </div>
+                        </div>
+                        <!-- Hover overlay -->
+                        <div
+                            class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <p
+                        class="text-white/30 text-xs mt-4 font-medium uppercase tracking-widest text-center group-hover:text-violet transition-colors">
+                        Get on Selar →</p>
+                </a>
+
+                <!-- Book 2: Things I Want to Say to You Before Eternity Comes -->
+                <a href="https://selar.com/tiwtstybec" target="_blank" class="group fade-in fd2"
+                    style="animation-play-state: running;">
+                    <div
+                        class="relative aspect-[2/3] rounded-lg overflow-hidden shadow-2xl shadow-emerald-500/15 group-hover:shadow-emerald-400/30 transition-shadow duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-b from-emerald-800 via-emerald-900 to-teal-950">
+                        </div>
+                        <div class="absolute inset-0"
+                            style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;); opacity: 0.08;">
+                        </div>
+                        <div class="absolute top-0 left-0 w-full h-1 bg-white/15"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-black/20"></div>
+                        <div class="absolute left-4 top-0 bottom-0 w-[1px] bg-white/10"></div>
+                        <div class="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/30 to-transparent">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-between p-8">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold">Seun Caleb</p>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-display text-2xl md:text-3xl font-black text-white italic leading-[1.1]">
+                                    Things I Want
+                                    to Say to You Before Eternity Comes</h3>
+                                <div class="w-12 h-[2px] bg-white/30 mt-4"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <p
+                        class="text-white/30 text-xs mt-4 font-medium uppercase tracking-widest text-center group-hover:text-emerald-400 transition-colors">
+                        Get on Selar →</p>
+                </a>
+
+                <!-- Book 3: 7 Letters to Ruby -->
+                <a href="https://selar.com/127867" target="_blank" class="group fade-in fd1"
+                    style="animation-play-state: running;">
+                    <div
+                        class="relative aspect-[2/3] rounded-lg overflow-hidden shadow-2xl shadow-amber-500/15 group-hover:shadow-amber-400/30 transition-shadow duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-b from-amber-700 via-amber-900 to-orange-950"></div>
+                        <div class="absolute inset-0"
+                            style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;); opacity: 0.08;">
+                        </div>
+                        <div class="absolute top-0 left-0 w-full h-1 bg-white/15"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-[2px] bg-black/20"></div>
+                        <div class="absolute left-4 top-0 bottom-0 w-[1px] bg-white/10"></div>
+                        <div class="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/30 to-transparent">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-between p-8">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold">Seun Caleb</p>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-display text-3xl md:text-4xl font-black text-white italic leading-[1.1]">
+                                    7 Letters to
+                                    Ruby</h3>
+                                <div class="w-12 h-[2px] bg-white/30 mt-4"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                    </div>
+                    <p
+                        class="text-white/30 text-xs mt-4 font-medium uppercase tracking-widest text-center group-hover:text-amber-400 transition-colors">
+                        Get on Selar →</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- HEARTS & INK — Museum Gallery -->
+    <!-- ============================================ -->
+    <section id="hearts-and-ink" class="bg-[#0a0a0a] text-white py-28 md:py-40 relative overflow-hidden">
+        <!-- Solid dark background -->
+
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12 relative z-10">
+
+            <!-- Museum-style header -->
+            <div class="text-center mb-24 fade-in" style="animation-play-state: running;">
+                <p class="text-[11px] uppercase tracking-[0.4em] text-white/20 font-bold mb-6">The Gallery</p>
+                <h2 class="font-display font-black text-white leading-[0.88] tracking-[-0.03em]"
+                    style="font-size: clamp(4rem, 11vw, 9rem);">Hearts &amp; Ink</h2>
+                <p class="text-white/30 text-sm mt-8 max-w-[500px] mx-auto leading-relaxed font-serif italic">
+                    An intimate poetry reading session bringing together writers and lovers of language. Held in
+                    Glasgow, Scotland
+                    and Lagos, Nigeria.
+                </p>
+                <div class="flex justify-center gap-4 mt-6">
+                    <span
+                        class="text-[10px] uppercase tracking-[0.2em] text-violet/80 font-bold border border-violet/20 px-4 py-1.5">Glasgow</span>
+                    <span
+                        class="text-[10px] uppercase tracking-[0.2em] text-amber-300/80 font-bold border border-amber-300/20 px-4 py-1.5">Lagos</span>
+                </div>
+            </div>
+
+            <!-- Glasgow — Museum row -->
+            <div class="mb-24">
+                <div class="flex items-center gap-4 mb-10 fade-in" style="animation-play-state: running;">
+                    <div class="w-8 h-[1px] bg-violet/40"></div>
+                    <h3 class="text-[11px] uppercase tracking-[0.4em] text-violet/60 font-bold">Glasgow Sessions</h3>
+                    <div class="flex-1 h-[1px] bg-white/5"></div>
+                </div>
+
+                <!-- Masonry-style museum grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <!-- Tall portrait -->
+                    <div class="gallery-item row-span-2 relative cursor-pointer fade-in fd1"
+                        style="grid-row: span 2; animation-play-state: running;">
+                        <div class="h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3113.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover" style="min-height: 500px;">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — I</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-square relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3142.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — II</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[4/3] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3128.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — III
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3138.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — IV</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-square relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3114.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — V</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[4/3] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3129.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — VI</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-square relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/glasgow_IMG_3143.jpg" alt="Hearts &amp; Ink Glasgow"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Glasgow — VII
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lagos — Museum row -->
+            <div>
+                <div class="flex items-center gap-4 mb-10 fade-in" style="animation-play-state: running;">
+                    <div class="w-8 h-[1px] bg-amber-300/40"></div>
+                    <h3 class="text-[11px] uppercase tracking-[0.4em] text-amber-300/60 font-bold">Lagos Sessions</h3>
+                    <div class="flex-1 h-[1px] bg-white/5"></div>
+                </div>
+
+                <!-- Featured hero image -->
+                <div class="gallery-item relative cursor-pointer mb-4 fade-in fd1"
+                    style="animation-play-state: running;">
+                    <div class="w-full aspect-[21/9] rounded-sm overflow-hidden border border-white/5">
+                        <img src="images/web/seuncaleb_6.jpg" alt="Seun Caleb performing in Lagos"
+                            class="w-full h-full object-cover object-center">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                        <p class="font-display text-xl md:text-2xl font-bold text-white/90 italic">Where words meet the
+                            warmth of
+                            Lagos nights</p>
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium mt-2">Lagos —
+                            Featured</p>
+                    </div>
+                </div>
+
+                <!-- Lagos grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_IMG_5691.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — I</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_IMG_5784.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — II</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session2_IMG_9649.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — III</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session3_IMG_9604.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — IV</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_IMG_5786.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — V</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session3_IMG_9619.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — VI</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session4_IMG_9701.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — VII</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session5_IMG_9583.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — VIII</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_IMG_5802.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — IX</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session2_IMG_9659.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — X</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd1"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_session5_IMG_9576.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — XI</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item aspect-[3/4] relative cursor-pointer fade-in fd2"
+                        style="animation-play-state: running;">
+                        <div class="w-full h-full rounded-sm overflow-hidden border border-white/5">
+                            <img src="images/web/lagos_IMG_5788.jpg" alt="Hearts &amp; Ink Lagos"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent">
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-medium">Lagos — XII</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- GET IN TOUCH — last section -->
+    <!-- ============================================ -->
+    <section id="contact" class="bg-white border-t border-ink/10 pt-24 pb-28 md:pt-32 md:pb-36">
+        <div class="max-w-[1400px] mx-auto px-8 md:px-12">
+            <h2 class="font-display font-black text-ink leading-[0.88] tracking-[-0.03em] fade-in"
+                style="font-size: clamp(4rem, 11vw, 9rem); animation-play-state: running;">Get in touch</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-8 mt-20 text-sm fade-in fd1"
+                style="animation-play-state: running;">
+                <div>
+                    <h4 class="font-bold uppercase tracking-[0.15em] text-[11px] text-ink/30 mb-5">Writings</h4>
+                    <ul class="space-y-2.5 text-ink/70">
+                        <li><a href="https://medium.com/@seuncaleb" target="_blank"
+                                class="hover:text-violet transition-colors">Medium</a></li>
+                        <li><a href="https://seuncaleb.substack.com/?utm_campaign=profile_chips" target="_blank"
+                                class="hover:text-violet transition-colors">Substack</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-[0.15em] text-[11px] text-ink/30 mb-5">Books</h4>
+                    <ul class="space-y-2.5 text-ink/70">
+                        <li><a href="https://selar.com/43v7017l27" target="_blank"
+                                class="hover:text-violet transition-colors">Diary
+                                of a Lagos Intern</a></li>
+                        <li><a href="https://selar.com/tiwtstybec" target="_blank"
+                                class="hover:text-violet transition-colors">Things I Want to Say...</a></li>
+                        <li><a href="https://selar.com/127867" target="_blank"
+                                class="hover:text-violet transition-colors">7 Letters
+                                to Ruby</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-[0.15em] text-[11px] text-ink/30 mb-5">Hearts &amp; Ink</h4>
+                    <ul class="space-y-2.5 text-ink/70">
+                        <li>Glasgow, Scotland</li>
+                        <li>Lagos, Nigeria</li>
+                        <li><a href="#hearts-and-ink" class="hover:text-violet transition-colors">View Gallery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-[0.15em] text-[11px] text-ink/30 mb-5">Connect</h4>
+                    <ul class="space-y-2.5 text-ink/70">
+                        <li><a href="https://x.com/seuncaleb" target="_blank"
+                                class="hover:text-violet transition-colors">X
+                                (Twitter)</a></li>
+                        <li><a href="https://instagram.com/seuncaleb" target="_blank"
+                                class="hover:text-violet transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink border-t border-white/5 py-10">
+        <div
+            class="max-w-[1400px] mx-auto px-8 md:px-12 flex flex-col md:flex-row justify-between items-center text-white/30 text-xs">
+            <p>© 2026 Seun Caleb. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="https://medium.com/@seuncaleb" target="_blank"
+                    class="hover:text-white transition-colors">Medium</a>
+                <a href="https://seuncaleb.substack.com/?utm_campaign=profile_chips" target="_blank"
+                    class="hover:text-white transition-colors">Substack</a>
+                <a href="https://x.com/seuncaleb" target="_blank" class="hover:text-white transition-colors">X</a>
+                <a href="https://instagram.com/seuncaleb" target="_blank"
+                    class="hover:text-white transition-colors">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EXTERNAL JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
