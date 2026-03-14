@@ -142,7 +142,7 @@ body {
 
 /* text padding in writing cards */
 .writing-card .mt-4 {
-    padding: 0 16px;
+    padding: 0 16px 20px;
 }
 
 /* Navbar scroll state */

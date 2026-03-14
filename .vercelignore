@@ -1,0 +1,14 @@
+# Ignore raw/unoptimized images (only deploy images/web/)
+images/drive-download-*
+images/Heart and Ink*
+images/*.HEIC
+images/*.heic
+images/*.JPG
+images/*.jpg
+!images/web/
+
+# Other
+.DS_Store
+node_modules/
+.env
+*.py
